@@ -5,7 +5,7 @@ const addBrowserCustomCommands = function () {
       this.waitForDisplayed();
       this.click();
     },
-    true
+    true,
   );
 
   browser.addCommand(
@@ -15,7 +15,7 @@ const addBrowserCustomCommands = function () {
       this.click();
       this.setValue(text);
     },
-    true
+    true,
   );
 
   // WAIT UTILS
@@ -30,7 +30,7 @@ const addBrowserCustomCommands = function () {
 
         return true === pageState && currentUrl.includes(url);
       },
-      { timeoutMsg: `Expected page was not Loaded: ${url}` }
+      { timeoutMsg: `Expected page was not Loaded: ${url}` },
     );
   });
 };

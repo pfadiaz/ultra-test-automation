@@ -1,5 +1,7 @@
 require('dotenv').config('./.env');
 
+const { addBrowserCustomCommands } = require('../tests/utils/custom-commands');
+
 exports.config = {
   //
   // ====================
@@ -175,8 +177,9 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {Object}         browser      instance of created browser/device session
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    addBrowserCustomCommands();
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name

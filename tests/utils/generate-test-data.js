@@ -7,8 +7,8 @@ const generateUserInformation = () => {
       password: process.env.STANDARD_USER_PASSWORD,
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
-      zipCode: faker.address.zipCode()
-    }
+      zipCode: faker.address.zipCode(),
+    },
   };
 };
 
