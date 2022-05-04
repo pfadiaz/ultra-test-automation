@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio ./config/main.conf.js",
+    "wdio:test:chrome": "npx wdio ./config/chrome.conf.js",
     "lint:fix": "npx eslint --cache --fix --quiet \"**/*.js\"",
     "prepare": "husky install"
   },
@@ -24,5 +24,9 @@
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "husky": "^7.0.4"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "dotenv": "^16.0.0"
   }
 }
