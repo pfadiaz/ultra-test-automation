@@ -36,11 +36,60 @@ HEADLESS=
 STANDARD_USER_PASSWORD=
 ```
 
+You can find the password for standard_user at https://www.saucedemo.com/ just paste it there.
+
 The flag `headless` will tell wdio to execute the suite in that particular mode. Leave it blank if you want a UI
 execution.
 
 For security reasons the password is not pushed as part of the code base. For local executions you can use .env and for
 CI/CD the password is stored on the Secrets Vault.
+
+# Note about Crossbrowser testing:
+
+In order to perform crossbrowser testing, you just need to open your .env file located at the root level and add a new
+variable:
+
+```
+BROWSER=
+```
+
+If you want to run the test in all the browser at the same time just do:
+
+```
+BROWSER=All
+```
+
+If you want to run it in chrome only:
+
+```
+BROWSER=Chrome
+```
+
+If you want to run it in MicrosoftEdge only:
+
+```
+BROWSER=MicrosoftEdge
+```
+
+If you want to run it in Firefox only:
+
+```
+BROWSER=Firefox
+```
+
+You can also execute all the tests in all the browsers in headless mode:
+
+```
+HEADLESS=Yes
+BROWSER=All
+```
+
+Or visually:
+
+```
+HEADLESS=No
+BROWSER=All
+```
 
 # Spec Details
 
