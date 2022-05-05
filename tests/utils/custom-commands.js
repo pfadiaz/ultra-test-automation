@@ -1,32 +1,32 @@
-const addBrowserCustomCommands = function () {
-  browser.addCommand(
+const addBrowserCustomCommands = async function () {
+  await browser.addCommand(
     'clickOn',
-    function () {
-      this.waitForDisplayed();
-      this.click();
+    async function () {
+      await this.waitForDisplayed();
+      await this.click();
     },
     true,
   );
 
-  browser.addCommand(
+  await browser.addCommand(
     'type',
-    function (text) {
-      this.waitForDisplayed();
-      this.click();
-      this.setValue(text);
+    async function (text) {
+      await this.waitForDisplayed();
+      await this.click();
+      await this.setValue(text);
     },
     true,
   );
 
   // WAIT UTILS
 
-  browser.addCommand('waitUntilPageFullyLoaded', function (url) {
+  await browser.addCommand('waitUntilPageFullyLoaded', async function (url) {
     this.waitUntil(
-      () => {
-        const pageState = browser.execute(() => {
+      async () => {
+        const pageState = await browser.execute(() => {
           return 'complete' === document.readyState;
         });
-        const currentUrl = browser.getUrl();
+        const currentUrl = await browser.getUrl();
 
         return true === pageState && currentUrl.includes(url);
       },

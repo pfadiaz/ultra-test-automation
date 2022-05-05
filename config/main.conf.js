@@ -1,4 +1,5 @@
 require('dotenv').config('./.env');
+require('expect-webdriverio').setOptions({ wait: 5000 });
 
 const { addBrowserCustomCommands } = require('../tests/utils/custom-commands');
 
