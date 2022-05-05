@@ -2,8 +2,8 @@ import Pages from '../../pages/index';
 import Utils from '../../utils/index';
 import fixtures from '../../fixtures/complete-checkout.json';
 
-describe('Feature: Shopping Cart', async function() {
-  before(async function() {
+describe('Feature: Shopping Cart', async function () {
+  before(async function () {
     this.fixtures = fixtures;
     this.profile = await Utils.generateUserInformation();
     await Pages.loginPage.open();
@@ -11,7 +11,7 @@ describe('Feature: Shopping Cart', async function() {
     await browser.waitUntilPageFullyLoaded(Pages.inventoryPage.url);
   });
 
-  it('TC-001 - validates that an standard user can complete a purchase flow', async function() {
+  it('TC-001 - validates that an standard user can complete a purchase flow', async function () {
     const itemToBuy = await Utils.pickRandomJSONEntry(Pages.inventoryPage.inventoryItems());
 
     await Pages.inventoryPage.addToShoppingCart(itemToBuy);
