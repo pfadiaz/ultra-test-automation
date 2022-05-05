@@ -5,7 +5,7 @@ const addBrowserCustomCommands = async function () {
       await this.waitForDisplayed();
       await this.click();
     },
-    true
+    true,
   );
 
   await browser.addCommand(
@@ -15,7 +15,7 @@ const addBrowserCustomCommands = async function () {
       await this.click();
       await this.setValue(text);
     },
-    true
+    true,
   );
 
   // WAIT UTILS
@@ -30,7 +30,7 @@ const addBrowserCustomCommands = async function () {
 
         return true === pageState && currentUrl.includes(url);
       },
-      { timeoutMsg: `Expected page was not Loaded: ${url}` }
+      { timeoutMsg: `Expected page was not Loaded: ${url}` },
     );
   });
 };

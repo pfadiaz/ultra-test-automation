@@ -3,5 +3,5 @@ import pickRandomJSONEntry from './random-picker';
 
 export default {
   generateUserInformation,
-  pickRandomJSONEntry
+  pickRandomJSONEntry,
 };
