@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "wdio:test:chrome": "npx wdio ./config/chrome.conf.js",
+    "wdio:test:desktop": "npx wdio ./config/desktop.conf.js",
     "lint:fix": "npx eslint --cache --fix --quiet \"**/*.js\"",
     "prepare": "husky install"
   },
