@@ -12,19 +12,19 @@ jobs:
         node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Step 1 Pull Secrets
         run: |
           echo "STANDARD_USER_PASSWORD=${{ secrets.STANDARD_USER_PASSWORD }}" >> $GITHUB_ENV
-          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Step 2 Install dependencies
         run: npm install
 
       - name: Step 3 Run tests
         run: npm run wdio:test:desktop
+        env:
+          BROWSER: Chrome
+          HEADLESS: No
 
       - name: Step 4 Generate Allure Report
         uses: simple-elf/allure-report-action@master
