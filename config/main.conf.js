@@ -26,28 +26,6 @@ exports.config = {
   // will be called from there.
   //
   specs: ['./tests/specs/**/*.test.js'],
-  // Patterns to exclude.
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
-  //
-  // ============
-  // Capabilities
-  // ============
-  // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
-  // time. Depending on the number of capabilities, WebdriverIO launches several test
-  // sessions. Within your capabilities you can overwrite the spec and exclude options in
-  // order to group specific specs to a specific capability.
-  //
-  // First, you can define how many instances should be started at the same time. Let's
-  // say you have 3 different capabilities (Chrome, Firefox, and Safari) and you have
-  // set maxInstances to 1; wdio will spawn 3 processes. Therefore, if you have 10 spec
-  // files and you set maxInstances to 10, all spec files will get tested at the same time
-  // and 30 processes will get spawned. The property handles how many capabilities
-  // from the same test should run tests.
-  //
-  maxInstances: 10,
-
   //
   // ===================
   // Test Configurations
@@ -55,7 +33,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'error',
+  logLevel: 'silent',
   //
   // Set specific log levels per logger
   // loggers:
@@ -90,12 +68,6 @@ exports.config = {
   //
   // Default request retries count
   connectionRetryCount: 3,
-  //
-  // Test runner services
-  // Services take over a specific job you don't want to take care of. They enhance
-  // your test setup with almost no effort. Unlike plugins, they don't add new
-  // commands. Instead, they hook themselves up into the test process.
-  services: ['selenium-standalone'],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -221,13 +193,9 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async function (
-    test,
-    context,
-    {
-      error, result, duration, passed, retries,
-    },
-  ) {
+  afterTest: async function (test, context, {
+    error, result, duration, passed, retries,
+  }) {
     if (!passed) {
       await browser.takeScreenshot();
     }

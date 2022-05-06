@@ -54,4 +54,6 @@ switch (process.env.BROWSER) {
 
 exports.config = merge(wdioConf.config, {
   capabilities: browserCapabilities,
+  // Test runner services
+  services: ['selenium-standalone'],
 });
