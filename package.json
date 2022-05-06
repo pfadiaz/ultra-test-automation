@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "wdio:test:desktop": "npx wdio ./config/desktop.conf.js",
+    "wdio:test:docker": "docker-compose up -d && npx wdio ./config/docker.conf.js",
     "lint:fix": "npx eslint --cache --fix --quiet \"**/*.js\"",
     "prepare": "husky install"
   },
@@ -26,7 +27,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "husky": "^7.0.4",
     "prettier": "^1.19.1",
-    "prettier-airbnb-config": "^1.0.0"
+    "prettier-airbnb-config": "^1.0.0",
+    "wdio-docker-service": "^3.2.0"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
