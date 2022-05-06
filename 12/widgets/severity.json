@@ -1,0 +1,21 @@
+[ {
+  "uid" : "97488df764d39c09",
+  "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+  "time" : {
+    "start" : 1651822378854,
+    "stop" : 1651822385177,
+    "duration" : 6323
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "28ff65d348cf31ac",
+  "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+  "time" : {
+    "start" : 1651822373746,
+    "stop" : 1651822381009,
+    "duration" : 7263
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

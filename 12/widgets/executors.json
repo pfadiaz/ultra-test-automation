@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://pfadiaz.github.io/ultra-test-automation",
+  "buildOrder" : 12,
+  "buildName" : "GitHub Actions Run #2280349707",
+  "buildUrl" : "https://github.com/pfadiaz/ultra-test-automation/actions/runs/2280349707",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://pfadiaz.github.io/ultra-test-automation/12/"
+} ]

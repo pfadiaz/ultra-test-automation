@@ -1,0 +1,31 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+    "uid" : "28ff65d348cf31ac",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1651822373746,
+      "stop" : 1651822381009,
+      "duration" : 7263
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "chrome-101.0.4951.54" ]
+  }, {
+    "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+    "uid" : "97488df764d39c09",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1651822378854,
+      "stop" : 1651822385177,
+      "duration" : 6323
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "firefox-99.0" ]
+  } ],
+  "name" : "behaviors"
+}
