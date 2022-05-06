@@ -26,7 +26,7 @@ jobs:
       - name: Step 3 Run tests
         run: npm run wdio:test:desktop
         env:
-          BROWSER: All
+          BROWSER: ChromeFireFox
           HEADLESS: Yes
 
       - name: Step 4 Get Allure history

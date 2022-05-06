@@ -34,7 +34,11 @@ const MicrosoftEdge = {
   },
 };
 
+// Runs all browsers
 const AllBrowsers = [MicrosoftEdge, Chrome, FireFox];
+
+// Runs just in Chrome and Firefox GH Actions
+const ChromeFireFox = [Chrome, FireFox];
 
 // Evaluation to determine where to run the test and if it is headless or not
 switch (process.env.BROWSER) {
@@ -46,6 +50,9 @@ switch (process.env.BROWSER) {
     break;
   case 'MicrosoftEdge':
     browserCapabilities = [MicrosoftEdge];
+    break;
+  case 'ChromeFireFox':
+    browserCapabilities = ChromeFireFox;
     break;
   default:
     browserCapabilities = AllBrowsers;
