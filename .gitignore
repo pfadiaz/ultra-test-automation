@@ -1,6 +1,8 @@
 allure-results
 node_modules
-allure-reports
+allure-report
 .eslintcache
 .env
 .DS_Store
+tmp
+reports
