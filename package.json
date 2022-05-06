@@ -28,7 +28,8 @@
     "husky": "^7.0.4",
     "prettier": "^1.19.1",
     "prettier-airbnb-config": "^1.0.0",
-    "wdio-docker-service": "^3.2.0"
+    "wdio-docker-service": "^3.2.0",
+    "webdriverio": "^7.19.7"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
