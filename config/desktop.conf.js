@@ -9,7 +9,6 @@ const chromiumBrowserOptions = 'Yes' === process.env.HEADLESS ? ['--headless'] :
 
 // variable to return the headless flag for Firefox
 const firefoxBrowserOptions = 'Yes' === process.env.HEADLESS ? ['-headless'] : [];
-
 const Chrome = {
   maxInstances: 3,
   browserName: 'chrome',
@@ -55,5 +54,5 @@ switch (process.env.BROWSER) {
 exports.config = merge(wdioConf.config, {
   capabilities: browserCapabilities,
   // Test runner services
-  services: ['selenium-standalone'],
+  services: [['selenium-standalone', { drivers: { firefox: '0.29.1', chrome: true, chromiumedge: 'latest' } }]],
 });
