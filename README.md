@@ -206,4 +206,8 @@ So, the recording can be stopped. Then you just need to open the video and drag 
 
 # CI/CD
 
-TBD - WIP
+Adding integration with Github Actions as CI/CD to execute the tests on each PR that is open. So basically once a PR is
+open against `main` branch the suite will be triggered and all the scenarios have to passed in order for the PR to be
+enabled to be merged.
+
+The second yml is a cron that runs every day at 12:00 am so, we can have fresh results at first hour in the morning.
