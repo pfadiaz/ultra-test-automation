@@ -15,7 +15,6 @@ The project has been written in JS, and has the following features:
 Once you have pulled the code, make sure you have installed the specific browsers to run the test:
 
 - Chrome
-- Safari
 - Edge
 - Firefox
 
@@ -91,6 +90,14 @@ HEADLESS=No
 BROWSER=All
 ```
 
+Once you have selected the capabilities to run, just head to your terminal and run:
+
+```
+npm run wdio:test:desktop
+```
+
+It will spin up 3 browsers at the time (if you chose all), otherwise one browser will be spawn.
+
 # Spec Details
 
 The Suite uses a before hook to extract the logic functionality. Inside you can find the use of `this`.
@@ -110,7 +117,92 @@ use it everywhere.
 
 # Docker
 
-TBD - WIP
+Rememeber to download Docker in your machine before running the suite with this approach.
+
+The project has been configured using:
+
+- Docker
+- Docker Service from wdio
+- Selenium Grid 4
+
+They will work together to trigger the suite in localhost:4444 by combining the configuration from docker.conf.js and
+docker-compose.yml entries.
+
+How to run it?, simple just do:
+
+```
+npm run wdio:test:docker
+```
+
+This command wraps `docker` in detached mode and will pull all the images from docker hub. It will pull 3 images:
+
+- selenium/node-edge
+- selenium/node-firefox
+- selenium/node-chrome
+
+### Keep in mind that the first time you run it, it will take longer as it will pull all images
+
+---
+
+Once the images are ready and the Grid is up and running (you can see it in localhost:4444/ui), the process will run the
+tests in those 3 browsers, the orchestration is handled by selenium-hub:
+
+```
+  selenium-hub:
+    image: selenium/hub:4.1.2-20220217
+    container_name: selenium-hub
+    ports:
+      - '4442:4442'
+      - '4443:4443'
+      - '4444:4444'
+```
+
+As you can see in the docker-compose.yml there are some extra configurations applying to each node:
+
+### VNC_NO_PASSWORD
+
+- Allows to watch the execution in real time from localhost:4444/ui with no pass.
+
+### SE_NODE_MAX_SESSIONS
+
+- Spawn up to 2 session at the time (concurrency)
+
+In addition to that, I'm adding extra settings to record videos of our executions and it will store the videos in the
+reports folder located at the project's root `./reports/videos`.
+
+From the wdio side, a new config was created, as it needs the docker service to communicate with docker. By seeting up 3
+simple things:
+
+```
+  hostname: 'localhost',
+  port: 4444,
+  path: '/',
+```
+
+As well as the capabilities that should match the images pulled from docker hub
+
+If you want to run docker to check the logs you just need to do:
+
+```
+docker-compose up
+```
+
+Then, open a new terminal and run:
+
+```
+npx wdio ./config/docker.conf.js
+```
+
+The videos will record the whole session, since the moment you ran docker-compose up. So once you are done, stop the
+containers
+
+```
+docker-compose down
+```
+
+So, the recording can be stopped. Then you just need to open the video and drag the bar to find the execution.
+
+---
 
 # CI/CD
 
