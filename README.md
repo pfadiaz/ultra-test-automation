@@ -212,6 +212,27 @@ button.
 
 The second yml is a cron that runs every day at 12:00 am so, we can have fresh results at first hour in the morning.
 
-I'm also using an action, that will generate the allure report and publish it in GH Pages keeping the execution history.
+### NOTE:
 
-The url to check the report is `https://pfadiaz.github.io/ultra-test-automation/`
+I'm also using an action, that will generate the allure report and publish it in GH Pages keeping the execution history.
+This action uses my personal Access token to push the assets to directly to GH Pages, by keeping the history in folders
+named after the build number. The GH pages will render the index.html (it can take up to a min to reflect the latest)
+
+### The url to check the report is `https://pfadiaz.github.io/ultra-test-automation/`
+
+On the other hand, if you are running your test locally with Docker or with your computer's browser, you can also see
+the allure report by doing:
+
+```
+npm run report:open
+```
+
+This will show up an html with the test results. You can see trends and graph. But, there is a catch, in order to see
+the execution history, don't forget to run:
+
+```
+report:history
+```
+
+This script will persist the execution so you can see the history. (GH Actions does it for you automatically via GH
+Pages)

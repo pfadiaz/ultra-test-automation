@@ -8,7 +8,7 @@ let browserCapabilities;
 const chromiumBrowserOptions = 'Yes' === process.env.HEADLESS ? '--headless' : '';
 
 // variable to return the headless flag for Firefox
-const firefoxBrowserOptions = 'Yes' === process.env.HEADLESS ? ['-headless'] : [];
+const firefoxBrowserOptions = 'Yes' === process.env.HEADLESS ? '-headless' : '';
 const Chrome = {
   maxInstances: 3,
   browserName: 'chrome',
@@ -22,7 +22,7 @@ const FireFox = {
   maxInstances: 3,
   browserName: 'firefox',
   'moz:firefoxOptions': {
-    args: firefoxBrowserOptions,
+    args: [firefoxBrowserOptions],
   },
 };
 
@@ -30,7 +30,7 @@ const MicrosoftEdge = {
   maxInstances: 3,
   browserName: 'MicrosoftEdge',
   'ms:edgeOptions': {
-    args: [...chromiumBrowserOptions, '--disable-gpu', '--window-size=1920,1080'],
+    args: [chromiumBrowserOptions, '--disable-gpu', '--window-size=1920,1080'],
   },
 };
 
