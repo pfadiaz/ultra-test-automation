@@ -20,8 +20,8 @@ jobs:
       - name: Step 2 Install dependencies
         run: npm install
 
-      - name: Step 3 Run tests in docker
-        run: npm run wdio:test:docker
+      - name: Step 3 Run tests
+        run: npm run wdio:test:desktop
 
       - name: Step 4 Generate Allure Report
         uses: simple-elf/allure-report-action@master
