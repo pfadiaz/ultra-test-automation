@@ -27,7 +27,7 @@ jobs:
         run: npm run wdio:test:desktop
         env:
           BROWSER: Chrome
-          HEADLESS: No
+          HEADLESS: Yes
 
       - name: Step 4 Generate Allure Report
         uses: simple-elf/allure-report-action@master

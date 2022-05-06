@@ -5,7 +5,7 @@ const wdioConf = require('./main.conf');
 let browserCapabilities;
 
 // variable to return the headless flag for Edge and Chrome
-const chromiumBrowserOptions = 'Yes' === process.env.HEADLESS ? ['--headless'] : [];
+const chromiumBrowserOptions = 'Yes' === process.env.HEADLESS ? '--headless' : '';
 
 // variable to return the headless flag for Firefox
 const firefoxBrowserOptions = 'Yes' === process.env.HEADLESS ? ['-headless'] : [];
@@ -14,7 +14,7 @@ const Chrome = {
   browserName: 'chrome',
   acceptInsecureCerts: true,
   'goog:chromeOptions': {
-    args: [...chromiumBrowserOptions, '--disable-gpu', '--window-size=1920,1080'],
+    args: [chromiumBrowserOptions, '--disable-gpu', '--window-size=1920,1080'],
   },
 };
 
@@ -54,5 +54,5 @@ switch (process.env.BROWSER) {
 exports.config = merge(wdioConf.config, {
   capabilities: browserCapabilities,
   // Test runner services
-  services: [['selenium-standalone', { drivers: { firefox: '0.29.1', chrome: true, chromiumedge: 'latest' } }]],
+  services: [['selenium-standalone', { drivers: { firefox: 'latest', chrome: true, chromiumedge: 'latest' } }]],
 });
