@@ -150,7 +150,7 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {Object}         browser      instance of created browser/device session
    */
-  before: function(capabilities, specs) {
+  before: function (capabilities, specs) {
     addBrowserCustomCommands();
   },
   /**
@@ -193,7 +193,9 @@ exports.config = {
    * @param {Boolean} result.passed    true if test has passed, otherwise false
    * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
    */
-  afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+  afterTest: async function (test, context, {
+    error, result, duration, passed, retries,
+  }) {
     if (!passed) {
       await browser.takeScreenshot();
     }
