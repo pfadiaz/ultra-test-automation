@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"[data-test=\"remove-sauce-labs-onesie\"]\"}\n  (Session info: headless chrome=101.0.4951.54)",
+  "stacktrace": "#0 0x56000e607533 <unknown>\n#1 0x56000e3661e8 <unknown>\n#2 0x56000e39c2d7 <unknown>\n#3 0x56000e39c4a1 <unknown>\n#4 0x56000e3cf494 <unknown>\n#5 0x56000e3b9f6d <unknown>\n#6 0x56000e3cd224 <unknown>\n#7 0x56000e3b9e33 <unknown>\n#8 0x56000e38f71a <unknown>\n#9 0x56000e390875 <unknown>\n#10 0x56000e64be1d <unknown>\n#11 0x56000e64f751 <unknown>\n#12 0x56000e63607e <unknown>\n#13 0x56000e650388 <unknown>\n#14 0x56000e62afe0 <unknown>\n#15 0x56000e66c748 <unknown>\n#16 0x56000e66c8c8 <unknown>\n#17 0x56000e68670d <unknown>\n#18 0x7fa68ca5e609 <unknown>\n"
+}

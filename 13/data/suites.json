@@ -1,0 +1,35 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Feature: Shopping Cart",
+    "children" : [ {
+      "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+      "uid" : "f80e05d88644bdce",
+      "parentUid" : "c5db62b1757537e9880d5fecc78395c6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651979127043,
+        "stop" : 1651979132169,
+        "duration" : 5126
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-101.0.4951.54" ]
+    }, {
+      "name" : "TC-001 - validates that an standard user can complete a purchase flow",
+      "uid" : "7de91d7366111347",
+      "parentUid" : "c5db62b1757537e9880d5fecc78395c6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651979135074,
+        "stop" : 1651979140595,
+        "duration" : 5521
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "firefox-99.0" ]
+    } ],
+    "uid" : "c5db62b1757537e9880d5fecc78395c6"
+  } ],
+  "name" : "suites"
+}
