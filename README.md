@@ -1,6 +1,8 @@
-# UI Testing
+# UI Testing With Webdriverio
 
 This project uses webdriver.io to test the purchase flow for the website: `https://www.saucedemo.com/`
+
+ <img src="https://marvel-b1-cdn.bc0a.com/f00000000131077/www.perfecto.io/sites/default/files/image/2019-06/webdriver-io-and-perfecto-429.png" width="400px" height="200px" />
 
 The project has been written in JS, and has the following features:
 
@@ -9,6 +11,29 @@ The project has been written in JS, and has the following features:
 - Page Object Model Pattern.
 - It Uses Mocha as test framework
 - It also uses de built assertion library from wdio
+
+# Project Distribution
+
+```
+ultra-test-automation/
+├─ .github/
+├─ husky/
+├─ config/
+├─ .eslintignore
+├─ .eslintrc.js
+├─ tests/
+│  ├─ fixtures/
+│  ├─ pages/
+│  ├─ specs/
+│  ├─ utils/
+├─ .gitignore
+├─ .prettier.rc
+├─ babel.config.js
+├─ docker-compose.yml
+├─ package-lock.json
+├─ package.json
+├─ README.md
+```
 
 # How to run the suite?
 
@@ -19,7 +44,7 @@ Once you have pulled the code, make sure you have installed the specific browser
 - Firefox
 
 After that, you need to have the configuration that webdriverio requires. please see
-https://webdriver.io/docs/gettingstarted/#system-requirements for more details. (Don't forget about JAVA JRE)
+https://webdriver.io/docs/gettingstarted/#system-requirements for more details. (Don't forget about Node, JAVA JRE)
 
 You are nearly there, the next step is:
 
@@ -27,15 +52,18 @@ You are nearly there, the next step is:
 npm install
 ```
 
-That will install all the dependencies. Finally as part of the set up, you need to add a .env file at root level of your
-project and add this properties:
+That will install all the dependencies.
+
+Finally as part of the set up, you need to add a `.env` file at root level of your project and add this properties:
 
 ```
 HEADLESS=
 STANDARD_USER_PASSWORD=
+BROWSER=
 ```
 
-You can find the password for standard_user at https://www.saucedemo.com/ just paste it there.
+You can find the password for standard_user at https://www.saucedemo.com/ just paste it there, in
+`STANDARD_USER_PASSWORD`.
 
 The flag `headless` will tell wdio to execute the suite in that particular mode. Leave it blank if you want a UI
 execution.
@@ -45,8 +73,8 @@ CI/CD the password is stored on the Secrets Vault.
 
 # Note about Crossbrowser testing:
 
-In order to perform crossbrowser testing, you just need to open your .env file located at the root level and add a new
-variable:
+In order to perform crossbrowser testing, you just need to open your `.env` file located at the root level and add a
+value to the variable:
 
 ```
 BROWSER=
@@ -90,7 +118,7 @@ HEADLESS=No
 BROWSER=All
 ```
 
-Once you have selected the capabilities to run, just head to your terminal and run:
+Once you have selected the capabilities to run, just head back to your terminal and run:
 
 ```
 npm run wdio:test:desktop
@@ -212,7 +240,7 @@ button.
 
 The second yml is a cron that runs every day at 12:00 am so, we can have fresh results at first hour in the morning.
 
-### NOTE:
+### REPORTING:
 
 I'm also using an action, that will generate the allure report and publish it in GH Pages keeping the execution history.
 This action uses my personal Access token to push the assets to directly to GH Pages, by keeping the history in folders
